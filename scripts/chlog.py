@@ -56,8 +56,8 @@ H_FEATURES = "### \U0001f389 New Features:"
 H_FIXES = "### \U0001f6e0️ Bug fixes & Improvements:"
 TITLE = "# Namida Changelog"
 
-MAIN_REPO = "namidaco/namida"
-SNAPSHOTS_REPO = "namidaco/namida-snapshots"
+MAIN_REPO = "nekotopup/kaeru"
+SNAPSHOTS_REPO = "nekotopup/kaeru-snapshot"
 COMMIT_URL = "https://github.com/%s/commit/" % MAIN_REPO
 
 REC = "\x1e"
@@ -132,7 +132,7 @@ def write(path, text):
 
 
 def norm_issue(raw):
-    """`https://github.com/o/r/issues/5` -> `o/r#5`, bare `#5` -> `namidaco/namida#5`."""
+    """`https://github.com/o/r/issues/5` -> `o/r#5`, bare `#5` -> `nekotopup/kaeru#5`."""
     raw = raw.strip().rstrip(",.")
     m = ISSUE_URL_RE.match(raw)
     if m:
@@ -143,7 +143,7 @@ def norm_issue(raw):
 
 
 def short_issue(raw):
-    """render `namidaco/namida#5` as `#5`, keep other repos explicit."""
+    """render `nekotopup/kaeru#5` as `#5`, keep other repos explicit."""
     return raw[len(MAIN_REPO):] if raw.startswith(MAIN_REPO + "#") else raw
 
 
